@@ -20,3 +20,13 @@ class Refeicao(models.Model):
 
     def __str__(self):
         return self.nome
+
+
+class Item(models.Model):
+    refeicao = models.ForeignKey(Refeicao, on_delete=models.DO_NOTHING)
+    quantidade = models.IntegerField()
+
+
+class Pedido(models.Model):
+    items = models.ManyToManyField(Item)
+    valor = models.FloatField()

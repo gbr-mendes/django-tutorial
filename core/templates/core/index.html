@@ -1,0 +1,35 @@
+{%extends 'base.html'%}
+{%block title%}Home{%endblock title%}
+{%block content%}
+<h1>Cardápio</h1>
+
+<h2>Almoço</h2>
+{%for refeicao in almocos%}
+<div>
+    <b>{{refeicao.nome}}</b><br>
+    <span>Valor</span>: {{refeicao.valor}}<br>
+    <span>Descrição</span>: {{refeicao.descricao}}<br>
+    <div style="margin: 20px;">
+        <img src="{{refeicao.imagem.url}}" alt="" width="150px" height="120px" style="border: 1px solid black;"">
+    </div>
+    <input type=" number" name="" id="">
+        <hr>
+    </div>
+    {%endfor%}
+
+    <h2>Jantar</h2>
+    {%for refeicao in jantares%}
+    <b>{{refeicao.nome}}</b><br>
+    <span>Valor</span>: {{refeicao.valor}}<br>
+    <span>Descrição</span>: {{refeicao.descricao}}<br>
+    <div style="margin: 20px;">
+        <img src="{{refeicao.imagem.url}}" alt="" width="150px" height="120px" style="border: 1px solid black;"">
+    </div>
+    <input type=" number" name="" id="">
+        <hr>
+    </div>
+    {%endfor%}
+    <div style="text-align: center;">
+        <button type="submit" style="padding: 10px; background-color: red; color: white;">FAZER PEDIDO</button>
+    </div>
+    {%endblock%}
